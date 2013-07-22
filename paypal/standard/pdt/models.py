@@ -72,7 +72,7 @@ class PayPalPDT(PayPalStandardBase):
                 try:                        
                     if not unquoted_line.startswith(' -'):
                         k, v = unquoted_line.split('=')                        
-                        response_dict[k.strip()] = v.strip()
+                        response_dict[k.strip()] = v.strip().decode('utf-8')
                 except ValueError, e:
                     pass
 
